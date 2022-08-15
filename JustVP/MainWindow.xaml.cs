@@ -29,6 +29,7 @@ namespace JustVP
         {
             InitializeComponent();
             Start();
+            SetAudio();
         }
         [Obsolete]
         void Start()
@@ -47,7 +48,7 @@ namespace JustVP
             {
                 videotextpanel.Text = ex.Message;
             }
-            videoelement.Volume = 0.05;
+
         }
 
         private void timer_Tick(object? sender, EventArgs e)
@@ -77,6 +78,13 @@ namespace JustVP
             }
         }
 
+        void SetAudio()
+        {
+            audioslider.Value = 0.25;
+            audioslider.Maximum = 1;
+            videoelement.Volume = 0.25;
+        }
+
         private void WindowMouseDown(object sender, MouseButtonEventArgs e)
         {
             try
@@ -94,7 +102,7 @@ namespace JustVP
         [Obsolete]
         private void OpenFile(object sender, RoutedEventArgs e)
         {
-            Stream myStream = null;
+            Stream? myStream = null;
             OpenFileDialog FileDialog = new OpenFileDialog();
 
             FileDialog.Title = "Выбрать файл";
@@ -120,6 +128,16 @@ namespace JustVP
             {
                 videotextpanel.Text = ex.Message;
             }
+        }
+
+        private void audioslider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            videoelement.Volume = audioslider.Value;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 

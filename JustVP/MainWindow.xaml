@@ -8,17 +8,58 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Normal"
         WindowStyle="None" 
-        ResizeMode="NoResize"
+        ResizeMode="CanResize"
         MouseDown="WindowMouseDown"
         ShowInTaskbar="True"
-        Title="JustVP" Height="450" Width="800">
+        Title="JustVP" Height="450" Width="800" MinHeight="300" MinWidth="300">
+
+    <!--#region ресурсы-->
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Style.Triggers>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="RenderTransform">
+                        <Setter.Value>
+                            <ScaleTransform ScaleX="0.85" ScaleY="0.85"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="brdr" TextBlock.Foreground="{TemplateBinding Foreground}" 
+                                Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
+                                              Content="{TemplateBinding Content}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+        </Style>
+    </Window.Resources>
+    <!--#endregion-->
+
     <Grid Background="#FF131313">
         <MediaElement x:Name="videoelement" UnloadedBehavior="Manual" Volume="0.1" ></MediaElement>
-        <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="262,173,261,225"></Button>
-        <Grid Margin="0,394,0,0" Background="#BF131313" Panel.ZIndex="5">
+        <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="0,315,0,98" HorizontalAlignment="Center" Width="150" Background="#FF444444" Foreground="White" BorderBrush="#FF373737"/>
+        <Button Content="Закрыть" Background="#7F484848" Foreground="#BFFFFFFF" BorderBrush="#BF707070" Click="Button_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="105"/>
+        <Grid Background="#BF131313" Panel.ZIndex="5" Height="56" VerticalAlignment="Bottom">
             <TextBlock x:Name="videotextpanel" Margin="10,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="147"></TextBlock>
-            
-            <Slider x:Name="videoslider"></Slider>
+            <Slider x:Name="videoslider">
+                <Slider.Foreground>
+                    <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
+                </Slider.Foreground>
+            </Slider>
+            <Slider x:Name="audioslider" Margin="0,28,0,0" HorizontalAlignment="Right" Width="127" ValueChanged="audioslider_ValueChanged">
+                <Slider.Foreground>
+                    <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
+                </Slider.Foreground>
+            </Slider>
         </Grid>
     </Grid>
 </Window>
