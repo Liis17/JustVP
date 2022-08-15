@@ -10,6 +10,7 @@
         WindowStyle="None" 
         ResizeMode="CanResize"
         MouseDown="WindowMouseDown"
+        SizeToContent="Width"
         ShowInTaskbar="True"
         Title="JustVP" Height="450" Width="800" MinHeight="300" MinWidth="300">
 
@@ -46,7 +47,7 @@
 
     <Grid Background="#FF131313">
         <MediaElement x:Name="videoelement" UnloadedBehavior="Manual" Volume="0.1" ></MediaElement>
-        <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="0,315,0,98" HorizontalAlignment="Center" Width="150" Background="#FF444444" Foreground="White" BorderBrush="#FF373737"/>
+        <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="0,0,0,98" HorizontalAlignment="Center" Width="150" Background="#FF444444" Foreground="White" BorderBrush="#FF373737" Height="37" VerticalAlignment="Bottom"/>
         <Button Content="Закрыть" Background="#7F484848" Foreground="#BFFFFFFF" BorderBrush="#BF707070" Click="Button_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="105"/>
         <Grid Background="#BF131313" Panel.ZIndex="5" Height="56" VerticalAlignment="Bottom">
             <TextBlock x:Name="videotextpanel" Margin="10,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="147"></TextBlock>
