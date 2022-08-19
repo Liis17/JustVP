@@ -24,6 +24,7 @@ namespace JustVP
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool isDown = false;
         [Obsolete]
         public MainWindow()
         {
@@ -59,7 +60,11 @@ namespace JustVP
                 {
                     videotextpanel.Text = String.Format("{0} / {1}", videoelement.Position.ToString(@"hh\:mm\:ss"), videoelement.NaturalDuration.TimeSpan.ToString(@"hh\:mm\:ss"));
 
-                    videoslider.Value = videoelement.Position.TotalSeconds;
+                    if (isDown == false)
+                    {
+                        videoslider.Value = videoelement.Position.TotalSeconds;
+                    }
+                    
                     string[] a = videotextpanel.Text.Split('/');
                     string[] b = a[1].Split(':');
                     int second = int.Parse(b[2]);
@@ -73,8 +78,6 @@ namespace JustVP
                         Close();
                     }
                 }
-                    
-                
             }
         }
 
@@ -138,6 +141,37 @@ namespace JustVP
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void MouseDowns(object sender, MouseButtonEventArgs e)
+        {
+            isDown = true;
+            debugtext.Text = isDown + "";
+        }
+
+       
+
+        private void videoslider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            if (isDown == true)
+            {
+                TimeSpan ts = new TimeSpan(0, 0, (int)videoslider.Value);
+                videoelement.Position = ts;
+                debugtext.Text = isDown + "\n" + ts;
+            }
+            
+        }
+
+        private void MouseUps(object sender, MouseButtonEventArgs e)
+        {
+            isDown = false;
+            debugtext.Text = isDown + "";
+        }
+
+        private void MouseDowns(object sender, MouseEventArgs e)
+        {
+            isDown = true;
+            debugtext.Text = isDown + "";
         }
     }
 
