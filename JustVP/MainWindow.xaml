@@ -51,7 +51,7 @@
         <Button Content="Закрыть" Background="#7F484848" Foreground="#BFFFFFFF" BorderBrush="{x:Null}" Click="Button_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="97"/>
         <Grid Background="#BF131313" Panel.ZIndex="5" Height="56" VerticalAlignment="Bottom">
             <TextBlock x:Name="videotextpanel" Margin="10,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="390"></TextBlock>
-            <Slider x:Name="videoslider" Margin="0,0,0,28" ValueChanged="videoslider_ValueChanged" MouseLeftButtonUp="MouseUps" MouseEnter="MouseDowns" >
+            <Slider x:Name="videoslider" Margin="0,0,0,28" ValueChanged="videoslider_ValueChanged" MouseEnter="MouseDowns" MouseLeave="MouseUps" >
                 <Slider.Foreground>
                     <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
                 </Slider.Foreground>
@@ -61,7 +61,7 @@
                     <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
                 </Slider.Foreground>
             </Slider>
-            <TextBlock Visibility="Hidden" x:Name="debugtext" Margin="437,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="390"/>
+            <TextBlock Visibility="Visible" x:Name="debugtext" Margin="437,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="390"/>
         </Grid>
     </Grid>
 </Window>

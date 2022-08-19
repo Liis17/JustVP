@@ -173,6 +173,12 @@ namespace JustVP
             isDown = true;
             debugtext.Text = isDown + "";
         }
+
+        private void MouseUps(object sender, MouseEventArgs e)
+        {
+            isDown = false;
+            debugtext.Text = isDown + "";
+        }
     }
 
 }
