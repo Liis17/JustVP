@@ -46,7 +46,7 @@
     <!--#endregion-->
 
     <Grid Background="#FF131313">
-        <MediaElement x:Name="videoelement" UnloadedBehavior="Manual" Volume="0.1" ></MediaElement>
+        <MediaElement x:Name="videoelement" UnloadedBehavior="Manual" Volume="0.1" MouseRightButtonDown="mouserightdown" ></MediaElement>
         <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="0,0,0,98" HorizontalAlignment="Center" Width="150" Background="#FF444444" Foreground="White" BorderBrush="#FF373737" Height="37" VerticalAlignment="Bottom"/>
         <Button Content="Закрыть" Background="#7F484848" Foreground="#BFFFFFFF" BorderBrush="{x:Null}" Click="Button_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="97"/>
         <Grid Background="#BF131313" Panel.ZIndex="5" Height="56" VerticalAlignment="Bottom">

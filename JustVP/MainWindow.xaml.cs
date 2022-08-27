@@ -179,6 +179,11 @@ namespace JustVP
             isDown = false;
             debugtext.Text = isDown + "";
         }
+
+        private void mouserightdown(object sender, MouseButtonEventArgs e)
+        {
+            Close();
+        }
     }
 
 }
