@@ -12,7 +12,11 @@
         MouseDown="WindowMouseDown"
         SizeToContent="Width"
         ShowInTaskbar="True"
-        Title="JustVP" Height="550" Width="800" MinHeight="300" MinWidth="300">
+        Title="JustVP" 
+        Height="550" 
+        Width="800" 
+        MinHeight="300" 
+        MinWidth="300">
 
     <!--#region ресурсы-->
     <Window.Resources>
@@ -46,22 +50,84 @@
     <!--#endregion-->
 
     <Grid Background="#FF131313">
-        <MediaElement x:Name="videoelement" UnloadedBehavior="Manual" Volume="0.1" MouseRightButtonDown="mouserightdown" ></MediaElement>
-        <Button x:Name="OFButton" Content="Открыть файл" Click="OpenFile" Margin="0,0,0,98" HorizontalAlignment="Center" Width="150" Background="#FF444444" Foreground="White" BorderBrush="#FF373737" Height="37" VerticalAlignment="Bottom"/>
-        <Button Content="Закрыть" Background="#7F484848" Foreground="#BFFFFFFF" BorderBrush="{x:Null}" Click="Button_Click" Height="30" VerticalAlignment="Top" HorizontalAlignment="Right" Width="97"/>
-        <Grid Background="#BF131313" Panel.ZIndex="5" Height="56" VerticalAlignment="Bottom">
-            <TextBlock x:Name="videotextpanel" Margin="10,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="390"></TextBlock>
-            <Slider x:Name="videoslider" Margin="0,0,0,28" ValueChanged="videoslider_ValueChanged" MouseEnter="MouseDowns" MouseLeave="MouseUps" >
+        <MediaElement
+            x:Name="videoelement" 
+            UnloadedBehavior="Manual" 
+            Volume="0.1" 
+            MouseRightButtonDown="mouserightdown" >
+        </MediaElement>
+        <Button 
+            x:Name="OFButton" 
+            Content="Открыть файл" 
+            Click="OpenFile" 
+            Margin="0,367,0,0" 
+            HorizontalAlignment="Center" 
+            Width="150" 
+            Background="#FF444444" 
+            Foreground="White" 
+            BorderBrush="#FF373737" 
+            Height="37" 
+            VerticalAlignment="Top"/>
+        <Button 
+            Content="Закрыть" 
+            Background="#7F484848" 
+            Foreground="#BFFFFFFF" 
+            BorderBrush="{x:Null}" 
+            Click="Button_Click" 
+            Height="30" 
+            VerticalAlignment="Top" 
+            HorizontalAlignment="Right"
+            Width="97"/>
+        <Grid 
+            Background="#BF131313" 
+            Panel.ZIndex="5" 
+            Height="56" 
+            VerticalAlignment="Bottom">
+            <TextBlock 
+                x:Name="videotextpanel" 
+                Margin="10,14,0,0" 
+                Foreground="White" 
+                Text="1488" 
+                FontFamily="Bahnschrift" 
+                FontSize="16" 
+                HorizontalAlignment="Left" 
+                Width="390">
+            </TextBlock>
+            <Slider 
+                x:Name="videoslider" 
+                Margin="0,0,0,28" 
+                ValueChanged="videoslider_ValueChanged" 
+                MouseEnter="MouseDowns" 
+                MouseLeave="MouseUps" >
                 <Slider.Foreground>
-                    <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
+                    <SolidColorBrush 
+                        Color="#BFE5E5E5" 
+                        Opacity="0.75"/>
                 </Slider.Foreground>
             </Slider>
-            <Slider x:Name="audioslider" Margin="0,28,0,0" HorizontalAlignment="Right" Width="127" ValueChanged="audioslider_ValueChanged">
+            <Slider 
+                x:Name="audioslider" 
+                Margin="0,28,0,0" 
+                HorizontalAlignment="Right"
+                Width="127" 
+                ValueChanged="audioslider_ValueChanged" 
+                Panel.ZIndex="1001">
                 <Slider.Foreground>
-                    <SolidColorBrush Color="#BFE5E5E5" Opacity="0.75"/>
+                    <SolidColorBrush 
+                        Color="#BFE5E5E5" 
+                        Opacity="0.75"/>
                 </Slider.Foreground>
             </Slider>
-            <TextBlock Visibility="Visible" x:Name="debugtext" Margin="437,14,0,0" Foreground="White" Text="1488" FontFamily="Bahnschrift" FontSize="16" HorizontalAlignment="Left" Width="390"/>
+            <TextBlock 
+                Visibility="Visible" 
+                x:Name="debugtext" 
+                Margin="437,14,0,0" 
+                Foreground="White" 
+                Text="false" 
+                FontFamily="Bahnschrift" 
+                FontSize="16" 
+                HorizontalAlignment="Left" 
+                Width="231"/>
         </Grid>
     </Grid>
 </Window>

@@ -37,7 +37,9 @@ namespace JustVP
         {
             try
             {
+#pragma warning disable CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
                 Uri uri = new Uri(App.Pathfile, false);
+#pragma warning restore CS8604 // Возможно, аргумент-ссылка, допускающий значение NULL.
                 videoelement.Source = uri;
                 DispatcherTimer timer = new DispatcherTimer();
                 timer.Interval = TimeSpan.FromMilliseconds(500);
@@ -48,6 +50,7 @@ namespace JustVP
             catch (Exception ex)
             {
                 videotextpanel.Text = ex.Message;
+                videoslider.Visibility = Visibility.Hidden;
             }
 
         }
