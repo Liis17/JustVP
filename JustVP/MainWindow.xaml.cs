@@ -31,6 +31,7 @@ namespace JustVP
             InitializeComponent();
             Start();
             SetAudio();
+            
         }
         [Obsolete]
         void Start()
